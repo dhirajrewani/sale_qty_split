@@ -1,6 +1,5 @@
 import { Component, t, useProps } from "@odoo/owl";
 import { registry } from "@web/core/registry";
-import { useService } from "@web/core/utils/hooks";
 import { usePopover } from "@web/core/popover/popover_hook";
 import { standardFieldProps } from "@web/views/fields/standard_field_props";
 
@@ -13,8 +12,8 @@ export class QtySplitPopover extends Component {
     });
 
     setup() {
-        this.orm = useService("orm");
-        this.action = useService("action");
+        this.orm = this.env.services.orm;
+        this.action = this.env.services.action;
     }
 
     get data() {
